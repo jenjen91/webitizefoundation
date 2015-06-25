@@ -7,3 +7,6 @@ This will become a template with a lot of user-friendly back-end functionality, 
 + Contact form
 + Blocking ip-addresses and emails from sending mails through the site
 + etc
+
+Made with meteor.js
+Version 0.1
