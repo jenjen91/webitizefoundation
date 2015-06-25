@@ -1,0 +1,34 @@
+template(name="loginform")
+  .login-dashboard
+    h4 Hi! Please sign in to administer your site
+    #error
+      p#error-text
+      form#reset-password
+        input#reset-password-email(type='hidden')
+        input#reset-password-submit(type='hidden')
+      p#reset-message
+      
+    form#bt-login-form(action="action")
+      .form-group
+        input.form-control(type="username" id="login-username" placeholder="username")
+      .form-group
+        input#login-password.form-control(type="password" placeholder="password")
+      .form-group
+        input#login-button.btn.btn-default(type="submit" value="Sign in")
+     a(href="/registerform") Get started
+     
+     
+template(name="registerform")
+  .login-dashboard
+    h6 Register
+    #error
+     p
+    form#bt-register-form(action="action")
+      .form-group
+        input#account-email.form-control(type="email" placeholder="email")
+      .form-group
+        input#account-username.form-control(type="text" placeholder="Username")
+      .form-group
+        input#account-password.form-control(type="password" placeholder="password")
+      .form-group
+        input#create-account.btn.btn-default(type="submit" value="Create account")

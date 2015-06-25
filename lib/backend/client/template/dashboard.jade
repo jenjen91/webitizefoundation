@@ -1,0 +1,32 @@
+template(name="dashboard")
+  h1 Velkommen #{currentUser.username}
+  .row
+    .col-md-4.dashbox
+      .dashbox-inner
+        h4
+          a(href="{{pathFor 'addpost'}}") Endre Blogg
+    .col-md-4.dashbox
+      .dashbox-inner
+        h4
+          a(href="{{pathFor 'editpages'}}") Endre sider
+    .col-md-4.dashbox
+      .dashbox-inner
+        h4
+          a(href="{{pathFor 'editcontactform'}}") Kontakt-skjema
+
+    .col-md-4.dashbox
+      .dashbox-inner
+        h4
+          a(href="{{pathFor 'users'}}") Brukere
+
+    .col-md-4.dashbox
+      .dashbox-inner
+        h4
+          a(href="{{pathFor 'sitesettings'}}") Instillinger
+
+    .col-md-4.dashbox
+      .dashbox-inner
+        h4
+          a(href="{{pathFor 'hosting'}}") Domene og dataforbruk
+
+  a(href="http://webitize.me") Webitize

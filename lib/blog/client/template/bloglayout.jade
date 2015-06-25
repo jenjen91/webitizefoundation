@@ -1,0 +1,19 @@
+template(name="bloglayout")
+  each posts
+    article.row.entry
+      div.col-md-4
+        div.thumb
+          img(src="#{post_thumb}")
+      div.col-md-6
+        h4
+          a(href="/posts/#{post_url}")
+            | #{post_title}
+        
+        div.meta
+          span
+            b Publisert: 
+          span #{savedAt.toLocaleString}
+        
+        div.content
+          p #{post_text}
+      

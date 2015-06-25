@@ -1,0 +1,33 @@
+template(name="addpostNav")
+  nav.addpost-nav.clearfix
+    li
+      a(href="{{pathFor 'addpost'}}")
+        | All innlegg 
+    li
+      a(href="{{pathFor 'addnew'}}")
+        | Nytt innlegg
+        
+template(name="addpost")
+  h1 Blogg
+  +addpostNav
+     
+  table.blog-table.table.table-hover
+    tr.trhead
+      td Blog Tittel 
+      td Blogg Text
+      td Dato
+      td Delete/update
+    
+    each posts
+      tr
+        td #{post_title}
+        td post text
+        td 
+          | #{savedAt.toLocaleString}             
+        td 
+          a.edit-btn Slett
+          a.edit-btn(href="/updatepost/#{post_url}") Oppdater
+
+
+
+             

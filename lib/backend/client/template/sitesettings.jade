@@ -1,0 +1,43 @@
+template(name="sitesettings")
+  h1 Innstillinger
+  ul.nav.nav-tabs(role="tablist")
+    li.active(role="presentation")
+      a.active(role="tab", aria-cotrols="geninst", data-toggle="tab" href="#geninst")
+        | Generelle instillinger
+    li(role="presentation")
+      a(role="tab", aria-cotrols="bloginst", data-toggle="tab" href="#bloginst")
+        | Blogg instillinger
+
+
+  div#send-message
+    p#error-text
+  form#editsettings
+    // Tab content
+    div.tab-content
+      div#geninst.tab-pane.active(role="tabpanel")
+        +geninst
+      div#bloginst.tab-pane(role="tabpanel")
+        +bloginst
+
+
+      .form-group
+        input.btn.btn-default(type='submit', value='Lagre')
+
+
+template(name="geninst")
+  .form-group
+    label Navn på hjemmesiden
+    input.form-control(type='text', name='sitetitle', value='#{sts.title}')
+
+  .form-group
+    label E-post addresse
+    input.form-control(type='email', name='siteemail', value='#{sts.email}')
+
+template(name="bloginst")
+  h4 Blogg settings
+  .form-group
+    label Date format
+    input.radio(type='radio', name='dateformat', value='non')
+    span Ingen
+    input.radio(type='radio', name='dateformat', value='standard' checked='#{checkedThis}')
+    span dd/mm/yy

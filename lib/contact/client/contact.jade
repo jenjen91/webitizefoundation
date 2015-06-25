@@ -1,0 +1,25 @@
+template(name='contact')
+  .row.social-icons
+    a.social(href="#")
+      i.fa.fa-linkedin
+      span Linkedin
+    a.social(href="#")
+      i.fa.fa-facebook-official
+      span Facebook
+    a.social(href="#")
+      i.fa.fa-yelp
+      span Yelp
+    a.social(href="#")
+      i.fa.fa-youtube
+      span Youtube
+  div#send-message
+    p#error-text
+  form#contact-form
+    .form-group
+      input#contact-from.form-control(type='email', name='from', placeholder='Din epost')
+    .form-group
+      input#contact-subject.form-control(type='text', name='subject', placeholder='Ditt Navn')
+    .form-group
+      textarea(name='message')#contact-message.form-control
+    .form-group
+      input#contact-submit.btn.btn-default(type='submit', value='send')

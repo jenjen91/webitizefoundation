@@ -1,0 +1,62 @@
+template(name="editcontactform")
+  h1 Innstillinger
+  ul.nav.nav-tabs(role="tablist")
+    li.active(role="presentation")
+      a.active(role="tab", aria-cotrols="geninst", data-toggle="tab" href="#geninst")
+        | Meldinger
+    li(role="presentation")
+      a(role="tab", aria-cotrols="bloginst", data-toggle="tab" href="#bloginst")
+        | Blokerte epost og ip address
+    li(role="presentation")
+      a(role="tab", aria-cotrols="contactinst", data-toggle="tab" href="#contactinst")
+        | instillinger
+
+  div#send-message
+    p#error-text
+  form#editsettings
+    // Tab content
+    div.tab-content
+      div#geninst.tab-pane.active(role="tabpanel")
+        each contactsub
+          +contactsubLayout
+
+      div#bloginst.tab-pane(role="tabpanel")
+        each lobes
+          +lobesLayout
+
+      div#contactinst.tab-pane(role="tabpanel")
+        +contactinst
+
+
+
+template(name="contactsubLayout")
+  h3 Meldinger
+  article.entry
+    ul
+      li Fra:
+        span #{from}
+      li Navn:
+        span #{subject}
+    p #{mesage}
+
+template(name="lobesLayout")
+  h4 Blokerte epost-adresser og ip-addresser
+    ul
+      li Ip:
+        span #{ip}
+      li Email:
+        span #{email}
+
+template(name="contactinst")
+  h4 Kontakt-skjema instillinger
+  .form-group
+    label Blokker ip-addresse
+    input.form-control(type='text', name='blockip')
+
+  .form-group
+    span Blokker ip-addresse
+    input.form-control(type='email', name='blockemail')
+    span dd/mm/yy
+
+  .form-group
+    input.btn.btn-default(type='submit', value='Lagre')
