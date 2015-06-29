@@ -1,0 +1,22 @@
+meteor mongo --url webitizefoundation.meteor.com
+
+mongodb://client-024e086d:7909caef-a756-dca7-01b6-e093d5cccd89@production-db-c2.meteor.io:27017/webitizefoundation_meteor_com
+C:\webapplications\webitizefoundation>
+
+mongodb://USER:PASSWORD@DBHOST/DBNAME)
+
+
+mongodump -h DBHOST -d DBNAME -u USER -p PASSWORD
+mongodump -h production-db-c2.meteor.io:27017 -d webitizefoundation_meteor_com -u client-7c2680b3 -p 42aeae5b-86d8-b078-d141-a45008f8dedf
+
+
+mongoimport --host meteor.m0.mongolayer.com --port 27017 --username client --password e63aaade-xxxx-yyyy-93e4-de0c1b80416f --db webitizefoundation_meteor_com --type csv --file c:\kanjifinder\kanjifinder.csv --headerline
+
+
+mongorestore -u CLIENT -p PASSWORD -h DBHOST -db www_mymeteorapp_com dump/DBNAME/
+mongorestore -h production-db-b2.meteor.io:27017 -d webitizefoundation_meteor_com -u client-2fcf9d8d -p 5d2e5228-8462-7120-7e59-26e49eb4bcbf  -db www_webitizefoundation_meteor_com
+
+ dump/webitizefoundation_meteor_com/
+
+mongorestore -u username -p password -h host:port -d databasename ~/desktop/location_of_your_mongodb_dump
+mongorestore -u client-024e086d -p 7909caef-a756-dca7-01b6-e093d5cccd89 -h production-db-c2.meteor.io:27017 -d webitizefoundation_meteor_com C:\webapplications\webitizefoundation\dump\meteor

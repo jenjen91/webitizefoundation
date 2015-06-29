@@ -1,0 +1,34 @@
+template(name="addpostNav")
+  nav.addpost-nav.clearfix
+    li
+      a(href="{{pathFor 'postSettings'}}")
+        | All innlegg
+    li
+      a(href="{{pathFor 'addnew'}}")
+        | Nytt innlegg
+
+template(name="postSettings")
+  h1 Blogg
+  +addpostNav
+
+  div#send-message(class="#{callbackMessageClass}")
+    p {{callbackMessage 'reason'}}
+    p {{callbackMessage 'success'}}
+
+  table.blog-table.table.table-hover
+    tr.trhead
+      td Blog Tittel
+      td Author
+      td Featured
+      td Dato
+      td Delete/update
+
+    each posts
+      tr
+        td #{post_title}
+        td #{author}
+        td #{post_featured}
+        td #{savedAt.toLocaleString}
+        td
+          a#delete-post.edit-btn Slett
+          a.edit-btn(href="/updatepost/#{post_url}") Oppdater

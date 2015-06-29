@@ -1,0 +1,31 @@
+Template.registerHelper("genErrorClass", function(argument){
+  return !!Session.get('genError') ? 'has-error' : '';
+});
+Template.registerHelper("seMessage", function(argument){
+  if (Session.get('genError'))
+    return Session.get('genError');
+
+  else if (Session.get('postSuccess'))
+    return Session.get('postSuccess');
+});
+
+Template.addnew.onCreated(function() {
+  Session.set('postSubmitErrors', {});
+  Session.set('postSuccess', {});
+});
+
+
+Template.addnew.helpers({
+  messageSuccessClass: function() {
+    return Session.get('postSuccess') ? 'send-success' : '';
+  },
+  messageErrorClass: function() {
+    return Session.get('postSubmitErrors') ? 'send-error' : '';
+  },
+  errorMessage: function(field) {
+    return Session.get('postSubmitErrors')[field];
+  },
+  errorClass: function (field) {
+    return !!Session.get('postSubmitErrors')[field] ? 'has-error' : '';
+  }
+});

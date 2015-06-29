@@ -1,0 +1,91 @@
+.addpost-nav{
+  margin: 12px 0;
+  border-bottom: solid 2px #000;
+}
+.addpost-nav li {
+  padding: 12px;
+  border: solid 1px #ccc;
+  list-style: none;
+  float: left;
+}
+tr.trhead {
+  border-bottom: 2px solid #000;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.edit-btn {
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  color: #666;
+  line-height: 30px;
+}
+
+.blog-table tr {
+  line-height: 42px;
+  border-bottom: 1px solid #eee;
+}
+.has-error{
+  border-color: @darkred;
+}
+.help-block{
+  color: @darkred;
+}
+input[type="radio"] {
+  background-color: #eee;
+  -webkit-appearance: initial;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  border: 1px solid #666;
+}
+input[type="radio"]:focus{
+  background-color: #000;
+}
+input[type="radio"]:checked {
+  background-color: #000;
+}
+
+input[type="radio"].has-error {
+  background-color: @lightred;
+  border: 1px solid @darkred;
+}
+#addnew textarea, #updatepost textarea {
+  height: 400px;
+}
+#fileList img {
+  height: 200px;
+  float: left;
+}
+//Toolbar
+#tool-bar{
+  clear:both;
+  display: block;
+  margin: 12px 0;
+  padding: 0;
+}
+
+ul#tool-bar li {
+  list-style: none;
+  float: left;
+  margin: 0;
+  padding: 6px 12px;
+  box-shadow: 1px 1px 1px#000;
+}
+
+// Image list popup
+#image-list {
+  display: none;
+  background-color: #ffffff;
+  margin: 5%;
+  padding: 20px;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 5%;
+  z-index: 100;
+  border: 3px solid #666;
+}

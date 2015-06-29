@@ -1,0 +1,59 @@
+template(name="addUserNav")
+  nav.addpost-nav.clearfix
+    li
+      a(href="{{pathFor 'users'}}")
+        | Users
+    li
+      a(href="#")
+        | Mail ved registering 
+    li
+      a(href="#")
+        | Adgangsnivå
+
+template(name="users")
+  h1 Brukere
+  +addUserNav
+  div#user-message(class="#{messageClass}")
+    p #{message}
+
+  
+  form#create-user
+    table.users
+      tr.trhead
+        td Brukernavn
+        td Epost
+        td passord
+        td Adgangsnivå 
+        td Uppdater
+        
+      tr#create-user
+        td 
+          input.form-control(type='text' name="username" placeholder="Brukernavn")
+        td 
+          input.form-control(type='email' name="email" placeholder="Epost")
+        td 
+          input.form-control(type='password' name="password" placeholder="Passord")
+        td 
+          select(name="permission")
+            option(name="permission" value="superuser") Superuser
+            option(name="permission" value="admin") Admin
+            option(name="permission" value="editor") Redaktør
+        td 
+          input.btn.btn-default(type='submit' value="Lagre ny bruker")
+      
+      each users
+        tr#update-user
+          td 
+            input.form-control(type='text' name="update-username" placeholder="#{username}")
+          td 
+            input.form-control(type='email' name="update-email" placeholder="#{emails}")
+          td 
+            input.form-control(type='password' name="update-password" placeholder="Passord")
+        
+          td 
+            select
+              option(name="update-permission" value="superuser") Superuser
+              option(name="update-permission" value="admin") Admin
+              option(name="update-permission" value="editor") Redaktør
+          td 
+            input.btn.btn-default(type='submit' value="Oppdater bruker")
